@@ -1,16 +1,16 @@
 import { Button, TouchableOpacity } from "react-native";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import {Image, StyleSheet, Text, View} from 'react-native';
 import { useEffect } from "react";
+import { useNavigation } from "expo-router";
 
-export default function Index() {
-
+export default function capabilities() {
   const router = useRouter();
-  const step: number = 1;
+  const step: number = 2;
   const navigation = useNavigation();
-    useEffect(() => {
-      navigation.setOptions({ headerShown: false });
-    }, [navigation]);
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
   return (
     <View
       style={styles.container}
@@ -19,29 +19,29 @@ export default function Index() {
       <Text style={styles.title}>Welcome to ChatGPT</Text>
       <Text style={styles.subtitle}>Ask anything, get your answer</Text>
             
-      <Text style={styles.subtitle}>Example</Text>
+      <Text style={styles.subtitle}>Capabilities</Text>
 
-      <Image style={styles.image} source={require('../assets/images/Frame.png')} />
+      <Image style={styles.image} source={require('../assets/images/rayo.png')} />
       
       <View style={styles.border}>
-        <Text style={styles.subtitle}>"Explain quantum computing in simple terms"</Text>
+        <Text style={styles.subtitle}>"Remembers what user said earlier in the conversation"</Text>
       </View>
 
       <View style={styles.border}>
-        <Text style={styles.subtitle}>"Got any creative ideas for a 10 year old's birthday"</Text>
+        <Text style={styles.subtitle}>"Allows user to provide follow-up corrections"</Text>
       </View>
 
       <View style={styles.border}>
-        <Text style={styles.subtitle}>"How do i make an HTTP request in JavaScript?"</Text>
+        <Text style={styles.subtitle}>"Trained to decline inappropiate requests"</Text>
       </View>
 
-      <View style={styles.progressContainer}>
-        <View style={[styles.progressLine, step === 1 && styles.active]} />
-        <View style={[styles.progressLine, step === 2 && styles.active]} />
-        <View style={[styles.progressLine, step === 3 && styles.active]} />
-      </View>
+    <View style={styles.progressContainer}>
+            <View style={[styles.progressLine, step === 1 && styles.active]} />
+            <View style={[styles.progressLine, step === 2 && styles.active]} />
+            <View style={[styles.progressLine, step === 3 && styles.active]} />
+    </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.navigate("/capabilities")}>
+      <TouchableOpacity style={styles.button} onPress={() => router.navigate("/limitations")}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
 

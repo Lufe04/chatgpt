@@ -3,10 +3,9 @@ import { useNavigation, useRouter } from "expo-router";
 import {Image, StyleSheet, Text, View} from 'react-native';
 import { useEffect } from "react";
 
-export default function Index() {
-
+export default function capabilities() {
   const router = useRouter();
-  const step: number = 1;
+  const step: number = 3;
   const navigation = useNavigation();
     useEffect(() => {
       navigation.setOptions({ headerShown: false });
@@ -19,29 +18,29 @@ export default function Index() {
       <Text style={styles.title}>Welcome to ChatGPT</Text>
       <Text style={styles.subtitle}>Ask anything, get your answer</Text>
             
-      <Text style={styles.subtitle}>Example</Text>
+      <Text style={styles.subtitle}>Limitations</Text>
 
       <Image style={styles.image} source={require('../assets/images/Frame.png')} />
       
       <View style={styles.border}>
-        <Text style={styles.subtitle}>"Explain quantum computing in simple terms"</Text>
+        <Text style={styles.subtitle}>"May occasionally generate incorrect information"</Text>
       </View>
 
       <View style={styles.border}>
-        <Text style={styles.subtitle}>"Got any creative ideas for a 10 year old's birthday"</Text>
+        <Text style={styles.subtitle}>"May occasionally produce harmful instructions or biased content"</Text>
       </View>
 
       <View style={styles.border}>
-        <Text style={styles.subtitle}>"How do i make an HTTP request in JavaScript?"</Text>
+        <Text style={styles.subtitle}>"Limited knowledge of world and events after 2021"</Text>
       </View>
 
       <View style={styles.progressContainer}>
-        <View style={[styles.progressLine, step === 1 && styles.active]} />
-        <View style={[styles.progressLine, step === 2 && styles.active]} />
-        <View style={[styles.progressLine, step === 3 && styles.active]} />
-      </View>
+              <View style={[styles.progressLine, step === 1 && styles.active]} />
+              <View style={[styles.progressLine, step === 2 && styles.active]} />
+              <View style={[styles.progressLine, step === 3 && styles.active]} />
+     </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.navigate("/capabilities")}>
+      <TouchableOpacity style={styles.button} onPress={() => router.navigate("/chat")}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
 
