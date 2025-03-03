@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: 'dimgray',
     margin: 10,
-    width:500,
+    width: "90%",
 
   },
   progressContainer: {
