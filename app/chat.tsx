@@ -75,7 +75,7 @@ export default function ChatScreen() {
       <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "position"}>
         {/* Barra superior */}
         <View style={styles.header}>
-          <TouchableOpacity onPress={() => router.navigate("/capabilities")}>
+          <TouchableOpacity onPress={() => router.navigate("/limitations")}>
             <Ionicons name="chevron-back" size={24} color="white" />
           </TouchableOpacity>
           <Image source={require("../assets/images/Vector.png")} style={styles.logo} />
